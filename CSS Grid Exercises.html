@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Exercises</title>
+    <style>
+        .grid-11a {
+            display: grid;
+            grid-template-columns: 200px 75px;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .grid-11b {
+            display: grid;
+            grid-template-columns: 50px auto 75px;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .grid-11c {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            row-gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .grid-11d {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            background-color: rgb(151, 11, 109);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .card button {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-11a">
+        <div class="box">200px</div>
+        <div class="box">75px</div>
+    </div>
+
+    <div class="grid-11b">
+        <div class="box">col1</div>
+        <div class="box">col2</div>
+        <div class="box">col3</div>
+    </div>
+
+    <div class="grid-11c">
+        <div class="box">col1</div>
+        <div class="box">col2</div>
+        <div class="box">col3</div>
+        <div class="box">col4</div>
+        <div class="box">col1</div>
+        <div class="box">col2</div>
+        <div class="box">col3</div>
+        <div class="box">col4</div>
+    </div>
+
+    <div class="grid-11d">
+        <div class="card">
+            <img src="cat-oliver.png" alt="Oliver">
+            <h3>Oliver</h3>
+            <p>2 mutual friends</p>
+            <button>Add Friend</button>
+        </div>
+        <div class="card">
+            <img src="cat-mimi.png" alt="Mimi">
+            <h3>Mimi</h3>
+            <p>3 mutual friends</p>
+            <button>Add Friend</button>
+        </div>
+        <div class="card">
+            <img src="cat-rex.png" alt="Rex">
+            <h3>Rex</h3>
+            <p>4 mutual friends</p>
+            <button>Add Friend</button>
+        </div>
+    </div>
+
+</body>
+</html>
