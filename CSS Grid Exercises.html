@@ -3,116 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Grid Exercises</title>
+    <title>CSS GRID</title>
+
     <style>
-        .grid-11a {
+        .instr{
+            font-family: 'Lucida Sans', sans-serif;
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+
+        .a-cntr {
             display: grid;
             grid-template-columns: 200px 75px;
-            gap: 10px;
-            margin-bottom: 20px;
+            margin-left: 80px;
         }
 
-        .grid-11b {
+        .longer-px{
+            background-color: rgb(165, 213, 218);
+        }
+
+        .shorter-px{
+            background-color: rgb(255, 129, 193);
+        }
+
+        .b-cntr {
             display: grid;
             grid-template-columns: 50px auto 75px;
-            gap: 10px;
-            margin-bottom: 20px;
+            margin-left: 80px;
         }
 
-        .grid-11c {
+        .col-1-3{
+            background-color: rgb(165, 213, 218);
+        }
+
+        .col-2{
+            background-color: rgb(255, 129, 193);
+        }
+
+        .c-cntr{
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(4,150px);
+            grid-template-rows: auto auto;
+            grid-area: 
+            "col1 col2 col3 col4"
+            "col5 col6 col7 col8";
+            column-gap: 20px;
             row-gap: 10px;
-            margin-bottom: 20px;
+            margin-left: 80px;
         }
 
-        .grid-11d {
+        .c-cntr > div {
+            background-color: rgb(255, 129, 193);
+        }
+
+        .d-cntr{
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 200px 200px 200px;
             gap: 20px;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .box {
-            background-color: rgb(151, 11, 109);
-            padding: 20px;
-            text-align: center;
-        }
-
-        .card {
+            height: fit-content;
             background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            align-items: center;
+            font-family: Verdana, sans-serif;
         }
 
-        .card img {
-            width: 100%;
-            border-radius: 10px;
+        .d-cntr div{
+            box-shadow: 5px 5px 5px 5px rgba(128, 128, 128, 0.439);
+            border: 0.5px solid rgba(128, 128, 128, 0.645);
         }
 
-        .card button {
-            background-color: blue;
+        .d-cntr div h4{
+            position: relative;
+            bottom: 20px;
+            margin-left: 8px;
+        }
+
+        .fb-mutuals{
+            font-size: small;
+            color: gray;
+            display: inline-block;
+            position: relative;
+            bottom: 40px;
+        }
+
+        button{
+            background-color: #3576ee;
             color: white;
-            padding: 10px;
             border: none;
-            border-radius: 5px;
+            padding: 10px 20px;
+            border-radius: 10px;
             cursor: pointer;
+            font-size: small;
+            margin-left: 10px;
+            position: relative;
+            bottom: 20px;
         }
 
-        .card button:hover {
-            background-color: darkblue;
+        .dog{
+            border-radius: 50%;
+            vertical-align: text-top;
+            position: relative;
+            bottom: 40px;
+            margin-left: 10px;
         }
     </style>
 </head>
+
 <body>
-
-    <div class="grid-11a">
-        <div class="box">200px</div>
-        <div class="box">75px</div>
+    <p class="instr" style="font-weight: bold;">11a. 2 columns with widths of 200px and 75px</p>
+    <div class="a-cntr">
+        <div class="longer-px">200px</div>
+        <div class="shorter-px">75px</div>
     </div>
 
-    <div class="grid-11b">
-        <div class="box">col1</div>
-        <div class="box">col2</div>
-        <div class="box">col3</div>
+    <p class="instr" style="font-weight: bold;">11b. 3 columns with widths of 50px|remaining space|75px</p>
+        <div class="b-cntr">
+        <div class="col-1-3">col1</div>
+        <div class="col-2">col2</div>
+        <div class="col-1-3">col3</div>
     </div>
 
-    <div class="grid-11c">
-        <div class="box">col1</div>
-        <div class="box">col2</div>
-        <div class="box">col3</div>
-        <div class="box">col4</div>
-        <div class="box">col1</div>
-        <div class="box">col2</div>
-        <div class="box">col3</div>
-        <div class="box">col4</div>
+    <p class="instr" style="font-weight: bold;">11c. 4 equal columns</p>
+    <div class="c-cntr">
+        <div>col1</div>
+        <div>col2</div>
+        <div>col3</div>
+        <div>col4</div>
+        <div>col1</div>
+        <div>col2</div>
+        <div>col3</div>
+        <div>col4</div>
     </div>
 
-    <div class="grid-11d">
-        <div class="card">
-            <img src="cat-oliver.png" alt="Oliver">
-            <h3>Oliver</h3>
-            <p>2 mutual friends</p>
-            <button>Add Friend</button>
+    <p class="instr" style="font-weight: bold;">11d. CSS Grid</p>
+    <div class="d-cntr">
+        <div>
+            <img src="cat-oliver.png" alt="cat-oliver"  width="200px">
+            <h4>Oliver</h4>
+            <img class="dog" src="DOG.jpeg" alt="dog" width="24px" height="24px">
+            <p class="fb-mutuals">2 mutual friends</p>
+            <button type="submit" class="button">Add Friend</button>
         </div>
-        <div class="card">
-            <img src="cat-mimi.png" alt="Mimi">
-            <h3>Mimi</h3>
-            <p>3 mutual friends</p>
-            <button>Add Friend</button>
+
+        <div>
+            <img src="cat-mimi.png" alt="cat-mimi"  width="200px">
+            <h4>Mimi</h4>
+            <img class="dog" src="DOG.jpeg" alt="dog" width="24px" height="24px">
+            <p class="fb-mutuals">2 mutual friends</p>
+            <button type="submit" class="button">Add Friend</button>
         </div>
-        <div class="card">
-            <img src="cat-rex.png" alt="Rex">
-            <h3>Rex</h3>
-            <p>4 mutual friends</p>
-            <button>Add Friend</button>
+
+        
+        <div>
+            <img src="cat-rex.png" alt="cat-rex"  width="200px">
+            <h4>Rex</h4>
+            <img class="dog" src="DOG.jpeg" alt="dog" width="24px" height="24px">
+            <p class="fb-mutuals">2 mutual friends</p>
+            <button type="submit" class="button">Add Friend</button>
         </div>
     </div>
-
 </body>
 </html>
